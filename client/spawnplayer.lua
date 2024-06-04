@@ -3,6 +3,7 @@ local pvp = Config.PVP
 local multiplierHealth, multiplierStamina
 local T = Translation[Lang].MessageOfSystem
 local active = false
+
 -- FUNCTIONS
 function CoreAction.Utils.TogglePVP()
     pvp = not pvp
@@ -69,8 +70,7 @@ AddEventHandler('playerSpawned', function()
 end)
 
 --EVENTS character Innitialize
-RegisterNetEvent('vorp:initCharacter')
-AddEventHandler('vorp:initCharacter', function(coords, heading, isdead)
+RegisterNetEvent('vorp:initCharacter', function(coords, heading, isdead)
     CoreAction.Player.TeleportToCoords(coords, heading)
 
     if isdead then
@@ -174,8 +174,7 @@ RegisterNetEvent("vorp:SelectedCharacter", function()
     CreateThread(CoreAction.Player.MapCheck)
 end)
 
-RegisterNetEvent("vorp:GetHealthFromCore")
-AddEventHandler("vorp:GetHealthFromCore", function(healthData)
+RegisterNetEvent("vorp:GetHealthFromCore", function(healthData)
     HealthData = healthData
 end)
 
